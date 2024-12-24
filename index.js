@@ -7,11 +7,15 @@ const { Student } = require('./models/students.models')
 
 
 const corsOptions = {
-  origin: "*",
-  credentials: true,
-  optionSuccessStatus: 200,
+  origin: '*',
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"],
 };
 app.use(cors(corsOptions));
+
+app.options("*", cors());
+
+
 
 app.use(express.json());
 
