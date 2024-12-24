@@ -8,6 +8,7 @@ const { Student } = require('./models/students.models')
 
 const corsOptions = {
   origin: '*',
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
 };
