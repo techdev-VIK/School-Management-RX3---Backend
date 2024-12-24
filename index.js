@@ -1,20 +1,17 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
 
-const { initializeDatabase } = require("./db/db.connection");
-const { Student } = require('./models/students.models')
-
+const cors = require("cors");
 
 const corsOptions = {
-  origin: '*',
+  origin: "*",
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"],
+  optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
-app.options("*", cors());
+const { initializeDatabase } = require("./db/db.connection");
+const { Student } = require('./models/students.models')
 
 
 
