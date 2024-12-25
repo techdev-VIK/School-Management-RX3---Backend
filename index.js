@@ -8,7 +8,7 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 const { initializeDatabase } = require("./db/db.connection");
 const { Student } = require('./models/students.models')
